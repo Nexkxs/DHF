@@ -1205,13 +1205,6 @@ GoTo.Text = "GoTo"
 GoTo.TextColor3 = Color3.fromRGB(255, 255, 255)
 GoTo.TextSize = 20.000
 GoTo.TextWrapped = true
-GoTo.MouseButton1Down:connect(function()
-    game.Players.LocalPlayer.Character.Humanoid:Destroy()
-    wait(0.1)
-    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-        v:Destroy()
-    end
-end)
 
 UICorner_28.CornerRadius = UDim.new(0, 3)
 UICorner_28.Parent = GoTo
