@@ -103,7 +103,6 @@ DHFBack.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
 DHFBack.BorderSizePixel = 0
 DHFBack.Position = UDim2.new(0.268248171, 0, 0.210332096, 0)
 DHFBack.Size = UDim2.new(0, 507, 0, 314)
-DHFBack.Draggable = true
 
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = DHFBack
