@@ -1303,5 +1303,8 @@ OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OpenButton.TextScaled = true
 OpenButton.TextSize = 14.000
 OpenButton.TextWrapped = true
+OpenButton.MouseButton1Down:connect(function()
+	DHFBack.Visible = true
+end)
 
 UICorner_33.Parent = OpenButton
