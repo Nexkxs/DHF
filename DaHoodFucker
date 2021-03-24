@@ -1,3 +1,6 @@
+-- Gui to Lua
+-- Version: 3.2
+
 -- Instances:
 
 local DaHoodFucker = Instance.new("ScreenGui")
@@ -96,7 +99,6 @@ DaHoodFucker.Name = "DaHoodFucker"
 DaHoodFucker.Parent = game.CoreGui
 DaHoodFucker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-
 DHFBack.Name = "DHFBack"
 DHFBack.Parent = DaHoodFucker
 DHFBack.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
@@ -148,7 +150,6 @@ CloseButton.TextSize = 14.000
 CloseButton.TextWrapped = true
 CloseButton.MouseButton1Down:connect(function()
 	DHFBack.Visible = false
-	OpenFrame.Visible = true
 end)
 
 DHFButtonsLeft.Name = "DHFButtonsLeft"
@@ -218,7 +219,7 @@ AutoFarms.MouseButton1Down:connect(function()
 	CombatFrame.Visible = false
 	AutoFarmsFrame.Visible = true
 	TeleportsFrame.Visible = false
-	TargetFrame.Visible = false
+	TargetFrame.Visible = fals
 end)
 
 Teleports.Name = "Teleports"
@@ -450,24 +451,25 @@ Noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
 Noclip.TextSize = 20.000
 Noclip.TextWrapped = true
 Noclip.MouseButton1Down:connect(function()
---[[ Press "E" to toggle noclip]]
-noclip = false
-game:GetService('RunService').Stepped:connect(function()
-	if noclip then
-		game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-	end
-end)
-plr = game.Players.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
+	--[[ Press "E" to toggle noclip]]
+	noclip = false
+	game:GetService('RunService').Stepped:connect(function()
+		if noclip then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
 
-	if key == "e" then
-		noclip = not noclip
-		game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-	end
+		if key == "e" then
+			noclip = not noclip
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	print('Loaded')
+	print('Press "E" to noclip')
 end)
-print('Loaded')
-print('Press "E" to noclip')
 
 UICorner_5.CornerRadius = UDim.new(0, 3)
 UICorner_5.Parent = Noclip
@@ -541,7 +543,7 @@ Unban.MouseButton1Down:connect(function()
 --[[
 IronBrew:tm: obfuscation; Version 2.7.2
 ]]
-		return(function(new_IIIIllIllIIIlIIIlIIIIll,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl)local new_llllllllIllllIlllII=string.char;local new_IIlIlIlllIIIIIllIl=string.sub;local new_IIIIllIlIIlIIIIIlII=table.concat;local new_IIIlIllllIIIllIllll=math.ldexp;local new_IllllIllIllIIlIll=getfenv or function()return _ENV end;local new_llIIlllIlIlIIIlllIIllIIll=select;local new_IllIlIIlIlIIllllIIIlIII=unpack or table.unpack;local new_lIlllIIlllIIIIlIII=tonumber;local function new_lIlIlIIIllIlIIlIllI(new_IllIlIIIlIII)local new_IlIIIlIlllIlIllIlIIII,new_IlIllllIIIIlIIIIIIlI,new_IlIllllIlIllIIIlIIllIllI="","",{}local new_IIlIIIlIllIIlll=256;local new_IllIlIIlIlIIllllIIIlIII={}for new_IllIIlllIlIllIllIl=0,new_IIlIIIlIllIIlll-1 do new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]=new_llllllllIllllIlllII(new_IllIIlllIlIllIllIl)end;local new_IllIIlllIlIllIllIl=1;local function new_IIIIllIllIIIlIIIlIIIIll()local new_IlIIIlIlllIlIllIlIIII=new_lIlllIIlllIIIIlIII(new_IIlIlIlllIIIIIllIl(new_IllIlIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl),36)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;local new_IlIllllIIIIlIIIIIIlI=new_lIlllIIlllIIIIlIII(new_IIlIlIlllIIIIIllIl(new_IllIlIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1),36)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII;return new_IlIllllIIIIlIIIIIIlI end;new_IlIIIlIlllIlIllIlIIII=new_llllllllIllllIlllII(new_IIIIllIllIIIlIIIlIIIIll())new_IlIllllIlIllIIIlIIllIllI[1]=new_IlIIIlIlllIlIllIlIIII;while new_IllIIlllIlIllIllIl<#new_IllIlIIIlIII do local new_IllIIlllIlIllIllIl=new_IIIIllIllIIIlIIIlIIIIll()if new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]then new_IlIllllIIIIlIIIIIIlI=new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]else new_IlIllllIIIIlIIIIIIlI=new_IlIIIlIlllIlIllIlIIII..new_IIlIlIlllIIIIIllIl(new_IlIIIlIlllIlIllIlIIII,1,1)end;new_IllIlIIlIlIIllllIIIlIII[new_IIlIIIlIllIIlll]=new_IlIIIlIlllIlIllIlIIII..new_IIlIlIlllIIIIIllIl(new_IlIllllIIIIlIIIIIIlI,1,1)new_IlIllllIlIllIIIlIIllIllI[#new_IlIllllIlIllIIIlIIllIllI+1],new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll=new_IlIllllIIIIlIIIIIIlI,new_IlIllllIIIIlIIIIIIlI,new_IIlIIIlIllIIlll+1 end;return table.concat(new_IlIllllIlIllIIIlIIllIllI)end;local new_lIlllIIlllIIIIlIII=new_lIlIlIIIllIlIIlIllI('22A22727522621Z275227161X21O21N21A1X2182162262242791X21621K22621Y2791S21821P2162161X1821M21222622327921421A1Y27I21X2791821621N1S21621P21L21227H2262202791C1W27U27Y280288275161Y21A2142161321A2192161Z2812791128527I27827521P28H21021P1W1Z29222N2791D21A21821021429D21M1X21728M1Z28N23G22622128L29E29U28J27921529D1Y1T181D27K27922724V1W1F2932751S21221H27I2222791Q1B2121Y23H2A92AA2752AS27521F2621F2AV22723J25L2AE2AL28S28U28W22622J27921P21921J21A21O21O28B21221723922O22O23E23C23D2BQ23E23B2262B52271S1W29P21727P27921K28N21021O21R29K27I28K2AG2BY29Q162C022G2BB2BD2BF2BH21N2BJ2BL22O23F2BQ23H23F23E23H23E23I23E2A12751V1Z21A21I2121X21422722629W279131W1W21R2162C029X2751P29E21M2862B022722Z1F22722V27922L22F2792262792332AT22722522722L2762272AS2E42E12272822752DZ2E92E22AL2E82822DH2AA2E22EB2E02752E22E82DX2DX2EC2E52DX2EP2E22E22CA2752882DN2E527K2E223J2AA27827Q2E82E221W2DY2EO2E921V2E32AU22721U2DT2752822FK2752E82AL2FO2EK2272AL2E229H2D72272882EP21T2E921S2DY2BA2EX2E92E827K2FX2FH2EA22722M2FL2FU2272GB2E829X2E82FT29X2FW2E52G22F52E522K2272BA2FA2FY2ET2EE2G82E227K22I2DT2CG28222H2E02EL2E92F62E92CG2DV2HC2E222E22722D2B12FE22C2HJ2HL2E922B2272742AT2ES2AT');local new_IllIIlllIlIllIllIl=(bit or bit32);local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl and new_IllIIlllIlIllIllIl.bxor or function(new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI)local new_IlIIIlIlllIlIllIlIIII,new_IlIllllIlIllIIIlIIllIllI,new_IIlIlIlllIIIIIllIl=1,0,10 while new_IllIIlllIlIllIllIl>0 and new_IlIllllIIIIlIIIIIIlI>0 do local new_IllIlIIlIlIIllllIIIlIII,new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl%2,new_IlIllllIIIIlIIIIIIlI%2 if new_IllIlIIlIlIIllllIIIlIII~=new_IIlIlIlllIIIIIllIl then new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIlIllIIIlIIllIllI+new_IlIIIlIlllIlIllIlIIII end new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII=(new_IllIIlllIlIllIllIl-new_IllIlIIlIlIIllllIIIlIII)/2,(new_IlIllllIIIIlIIIIIIlI-new_IIlIlIlllIIIIIllIl)/2,new_IlIIIlIlllIlIllIlIIII*2 end if new_IllIIlllIlIllIllIl<new_IlIllllIIIIlIIIIIIlI then new_IllIIlllIlIllIllIl=new_IlIllllIIIIlIIIIIIlI end while new_IllIIlllIlIllIllIl>0 do local new_IlIllllIIIIlIIIIIIlI=new_IllIIlllIlIllIllIl%2 if new_IlIllllIIIIlIIIIIIlI>0 then new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIlIllIIIlIIllIllI+new_IlIIIlIlllIlIllIlIIII end new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII=(new_IllIIlllIlIllIllIl-new_IlIllllIIIIlIIIIIIlI)/2,new_IlIIIlIlllIlIllIlIIII*2 end return new_IlIllllIlIllIIIlIIllIllI end local function new_IlIllllIIIIlIIIIIIlI(new_IlIIIlIlllIlIllIlIIII,new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI)if new_IlIllllIIIIlIIIIIIlI then local new_IllIIlllIlIllIllIl=(new_IlIIIlIlllIlIllIlIIII/2^(new_IllIIlllIlIllIllIl-1))%2^((new_IlIllllIIIIlIIIIIIlI-1)-(new_IllIIlllIlIllIllIl-1)+1);return new_IllIIlllIlIllIllIl-new_IllIIlllIlIllIllIl%1;else local new_IllIIlllIlIllIllIl=2^(new_IllIIlllIlIllIllIl-1);return(new_IlIIIlIlllIlIllIlIIII%(new_IllIIlllIlIllIllIl+new_IllIIlllIlIllIllIl)>=new_IllIIlllIlIllIllIl)and 1 or 0;end;end;local new_IllIIlllIlIllIllIl=1;local function new_IlIIIlIlllIlIllIlIIII()local new_IIlIlIlllIIIIIllIl,new_IllIlIIlIlIIllllIIIlIII,new_IlIIIlIlllIlIllIlIIII,new_IlIllllIIIIlIIIIIIlI=new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+3);new_IIlIlIlllIIIIIllIl=new_IlIllllIlIllIIIlIIllIllI(new_IIlIlIlllIIIIIllIl,79)new_IllIlIIlIlIIllllIIIlIII=new_IlIllllIlIllIIIlIIllIllI(new_IllIlIIlIlIIllllIIIlIII,79)new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IlIIIlIlllIlIllIlIIII,79)new_IlIllllIIIIlIIIIIIlI=new_IlIllllIlIllIIIlIIllIllI(new_IlIllllIIIIlIIIIIIlI,79)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+4;return(new_IlIllllIIIIlIIIIIIlI*16777216)+(new_IlIIIlIlllIlIllIlIIII*65536)+(new_IllIlIIlIlIIllllIIIlIII*256)+new_IIlIlIlllIIIIIllIl;end;local function new_IllIlIIIlIII()local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl),79);new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;return new_IlIIIlIlllIlIllIlIIII;end;local function new_IIlIIIlIllIIlll()local new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII=new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+2);new_IlIllllIIIIlIIIIIIlI=new_IlIllllIlIllIIIlIIllIllI(new_IlIllllIIIIlIIIIIIlI,79)new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IlIIIlIlllIlIllIlIIII,79)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+2;return(new_IlIIIlIlllIlIllIlIIII*256)+new_IlIllllIIIIlIIIIIIlI;end;local function new_lIlIlIIIllIlIIlIllI()local new_IlIllllIlIllIIIlIIllIllI=new_IlIIIlIlllIlIllIlIIII();local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII();local new_IIlIlIlllIIIIIllIl=1;local new_IlIllllIlIllIIIlIIllIllI=(new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,1,20)*(2^32))+new_IlIllllIlIllIIIlIIllIllI;local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,21,31);local new_IllIIlllIlIllIllIl=((-1)^new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,32));if(new_IlIIIlIlllIlIllIlIIII==0)then if(new_IlIllllIlIllIIIlIIllIllI==0)then return new_IllIIlllIlIllIllIl*0;else new_IlIIIlIlllIlIllIlIIII=1;new_IIlIlIlllIIIIIllIl=0;end;elseif(new_IlIIIlIlllIlIllIlIIII==2047)then return(new_IlIllllIlIllIIIlIIllIllI==0)and(new_IllIIlllIlIllIllIl*(1/0))or(new_IllIIlllIlIllIllIl*(0/0));end;return new_IIIlIllllIIIllIllll(new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII-1023)*(new_IIlIlIlllIIIIIllIl+(new_IlIllllIlIllIIIlIIllIllI/(2^52)));end;local new_Illlllll=new_IlIIIlIlllIlIllIlIIII;local function new_IIIlIllllIIIllIllll(new_IlIIIlIlllIlIllIlIIII)local new_IlIllllIIIIlIIIIIIlI;if(not new_IlIIIlIlllIlIllIlIIII)then new_IlIIIlIlllIlIllIlIIII=new_Illlllll();if(new_IlIIIlIlllIlIllIlIIII==0)then return'';end;end;new_IlIllllIIIIlIIIIIIlI=new_IIlIlIlllIIIIIllIl(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1);new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII;local new_IlIIIlIlllIlIllIlIIII={}for new_IllIIlllIlIllIllIl=1,#new_IlIllllIIIIlIIIIIIlI do new_IlIIIlIlllIlIllIlIIII[new_IllIIlllIlIllIllIl]=new_llllllllIllllIlllII(new_IlIllllIlIllIIIlIIllIllI(new_IIIIllIllIIIlIIIlIIIIll(new_IIlIlIlllIIIIIllIl(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl)),79))end return new_IIIIllIlIIlIIIIIlII(new_IlIIIlIlllIlIllIlIIII);end;local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII;local function new_Illlllll(...)return{...},new_llIIlllIlIlIIIlllIIllIIll('#',...)end local function new_llllllllIllllIlllII()local new_llIIlllIlIlIIIlllIIllIIll={};local new_lIlllIIlllIIIIlIII={};local new_IllIIlllIlIllIllIl={};local new_IIIIllIllIIIlIIIlIIIIll={[#{{294;243;590;992};{332;957;100;785};}]=new_lIlllIIlllIIIIlIII,[#{{548;773;809;936};"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{"1 + 1 = 111";{700;808;208;757};"1 + 1 = 111";"1 + 1 = 111";}]=new_IllIIlllIlIllIllIl,[#{"1 + 1 = 111";}]=new_llIIlllIlIlIIIlllIIllIIll,};local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII()local new_IIlIlIlllIIIIIllIl={}for new_IlIllllIIIIlIIIIIIlI=1,new_IllIIlllIlIllIllIl do local new_IlIIIlIlllIlIllIlIIII=new_IllIlIIIlIII();local new_IllIIlllIlIllIllIl;if(new_IlIIIlIlllIlIllIlIIII==0)then new_IllIIlllIlIllIllIl=(new_IllIlIIIlIII()~=0);elseif(new_IlIIIlIlllIlIllIlIIII==3)then new_IllIIlllIlIllIllIl=new_lIlIlIIIllIlIIlIllI();elseif(new_IlIIIlIlllIlIllIlIIII==1)then new_IllIIlllIlIllIllIl=new_IIIlIllllIIIllIllll();end;new_IIlIlIlllIIIIIllIl[new_IlIllllIIIIlIIIIIIlI]=new_IllIIlllIlIllIllIl;end;new_IIIIllIllIIIlIIIlIIIIll[3]=new_IllIlIIIlIII();for new_IIIIllIllIIIlIIIlIIIIll=1,new_IlIIIlIlllIlIllIlIIII()do local new_IllIIlllIlIllIllIl=new_IllIlIIIlIII();if(new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,1,1)==0)then local new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,2,3);local new_IllIlIIlIlIIllllIIIlIII=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,4,6);local new_IllIIlllIlIllIllIl={new_IIlIIIlIllIIlll(),new_IIlIIIlIllIIlll(),nil,nil};if(new_IlIllllIlIllIIIlIIllIllI==0)then new_IllIIlllIlIllIllIl[#("uU1")]=new_IIlIIIlIllIIlll();new_IllIIlllIlIllIllIl[#("I3ln")]=new_IIlIIIlIllIIlll();elseif(new_IlIllllIlIllIIIlIIllIllI==1)then new_IllIIlllIlIllIllIl[#("bk5")]=new_IlIIIlIlllIlIllIlIIII();elseif(new_IlIllllIlIllIIIlIIllIllI==2)then new_IllIIlllIlIllIllIl[#("CCz")]=new_IlIIIlIlllIlIllIlIIII()-(2^16)elseif(new_IlIllllIlIllIIIlIIllIllI==3)then new_IllIIlllIlIllIllIl[#("ShH")]=new_IlIIIlIlllIlIllIlIIII()-(2^16)new_IllIIlllIlIllIllIl[#("JQW3")]=new_IIlIIIlIllIIlll();end;if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,1,1)==1)then new_IllIIlllIlIllIllIl[#("5V")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("BG")]]end if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,2,2)==1)then new_IllIIlllIlIllIllIl[#("dH4")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("rdl")]]end if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,3,3)==1)then new_IllIIlllIlIllIllIl[#("kv5A")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("xe0L")]]end new_llIIlllIlIlIIIlllIIllIIll[new_IIIIllIllIIIlIIIlIIIIll]=new_IllIIlllIlIllIllIl;end end;for new_IllIIlllIlIllIllIl=1,new_IlIIIlIlllIlIllIlIIII()do new_lIlllIIlllIIIIlIII[new_IllIIlllIlIllIllIl-1]=new_llllllllIllllIlllII();end;return new_IIIIllIllIIIlIIIlIIIIll;end;local function new_IIIlIllllIIIllIllll(new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII,new_IllIlIIIlIII)new_IllIIlllIlIllIllIl=(new_IllIIlllIlIllIllIl==true and new_llllllllIllllIlllII())or new_IllIIlllIlIllIllIl;return(function(...)local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl[1];local new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[3];local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[2];local new_llllllllIllllIlllII=new_Illlllll local new_IlIIIlIlllIlIllIlIIII=1;local new_IIlIIIlIllIIlll=-1;local new_lIlIlIIIllIlIIlIllI={};local new_IIIIllIllIIIlIIIlIIIIll={...};local new_lIlllIIlllIIIIlIII=new_llIIlllIlIlIIIlllIIllIIll('#',...)-1;local new_IllIIlllIlIllIllIl={};local new_IlIllllIIIIlIIIIIIlI={};for new_IllIIlllIlIllIllIl=0,new_lIlllIIlllIIIIlIII do if(new_IllIIlllIlIllIllIl>=new_IIlIlIlllIIIIIllIl)then new_lIlIlIIIllIlIIlIllI[new_IllIIlllIlIllIllIl-new_IIlIlIlllIIIIIllIl]=new_IIIIllIllIIIlIIIlIIIIll[new_IllIIlllIlIllIllIl+1];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IIIIllIllIIIlIIIlIIIIll[new_IllIIlllIlIllIllIl+#{{311;373;604;964};}];end;end;local new_IllIIlllIlIllIllIl=new_lIlllIIlllIIIIlIII-new_IIlIlIlllIIIIIllIl+1 local new_IllIIlllIlIllIllIl;local new_IIlIlIlllIIIIIllIl;while true do new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("P")];if new_IIlIlIlllIIIIIllIl<=#("x5HoznD6QVU1")then if new_IIlIlIlllIIIIIllIl<=#("lcPAD")then if new_IIlIlIlllIIIIIllIl<=#("db")then if new_IIlIlIlllIIIIIllIl<=#("")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Kz")]]=new_IllIIlllIlIllIllIl[#("cxY")];elseif new_IIlIlIlllIIIIIllIl>#("d")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rF")]]=new_IllIIlllIlIllIllIl[#("TAj")];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("VH")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ElO")]][new_IllIIlllIlIllIllIl[#("KqiB")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("5vL")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("uZ")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("iFq")]];elseif new_IIlIlIlllIIIIIllIl==#("5xeE")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("2E")]][new_IllIIlllIlIllIllIl[#{{525;111;766;49};{742;869;750;37};"1 + 1 = 111";}]]=new_IllIIlllIlIllIllIl[#("Jr05")];else do return end;end;elseif new_IIlIlIlllIIIIIllIl<=#("ZiXUkgnQ")then if new_IIlIlIlllIIIIIllIl<=#("DRdpCD")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("OX")]][new_IllIIlllIlIllIllIl[#("res")]]=new_IllIIlllIlIllIllIl[#("kbrr")];elseif new_IIlIlIlllIIIIIllIl==#("cZH2vjp")then local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[#("bo")]new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl+1,new_IIlIIIlIllIIlll))else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#{{116;213;167;12};"1 + 1 = 111";}];local new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("j2n")]];new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII+1]=new_IlIllllIlIllIIIlIIllIllI;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{150;285;955;601};}]];end;elseif new_IIlIlIlllIIIIIllIl<=#("sE12iUyQxZ")then if new_IIlIlIlllIIIIIllIl>#("31Qsr0uUm")then local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Cb")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("02Z")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("BS")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("IPf")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("qQ")]][new_IllIIlllIlIllIllIl[#("vD6")]]=new_IllIIlllIlIllIllIl[#("Jfjn")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("tP")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{243;813;31;458};"1 + 1 = 111";}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";}]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("DQD")]][new_IllIIlllIlIllIllIl[#("qRXF")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("R6")]]=new_IllIIlllIlIllIllIl[#("p2V")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("A6")]]=new_IllIIlllIlIllIllIl[#("B04")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("fr")]]=new_IllIIlllIlIllIllIl[#("dMs")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("er")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("mxP")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rz")]][new_IllIIlllIlIllIllIl[#("vxs")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("xuCN")]];else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("RG")]local new_IlIllllIlIllIIIlIIllIllI,new_IllIIlllIlIllIllIl=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("AMQ")])))new_IIlIIIlIllIIlll=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1 local new_IllIIlllIlIllIllIl=0;for new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll do new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl];end;end;elseif new_IIlIlIlllIIIIIllIl>#("2P4h43HHM7P")then local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("kZ")]new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("4Lc")]))else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("8u")]local new_IlIllllIlIllIIIlIIllIllI,new_IllIIlllIlIllIllIl=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("0VT")])))new_IIlIIIlIllIIlll=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1 local new_IllIIlllIlIllIllIl=0;for new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll do new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl];end;end;elseif new_IIlIlIlllIIIIIllIl<=#("tBRpuHSebQBfJbxHoc")then if new_IIlIlIlllIIIIIllIl<=#{"1 + 1 = 111";{926;235;975;938};"1 + 1 = 111";"1 + 1 = 111";{969;892;160;206};{778;89;836;399};{298;865;140;487};"1 + 1 = 111";{396;934;18;226};{489;620;355;883};"1 + 1 = 111";{857;959;697;559};{666;833;528;497};{148;4;577;799};{157;925;557;339};}then if new_IIlIlIlllIIIIIllIl<=#("oMcFXbiuloZJ2")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("3e")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zOH")]];elseif new_IIlIlIlllIIIIIllIl>#("arJ6o0la2sKs1n")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("1I")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("hz0")]][new_IllIIlllIlIllIllIl[#("rVV6")]];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Jp")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("VgL")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("5JyKEi5mHny4XpKh")then local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[#("Dt")]new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl+1,new_IIlIIIlIllIIlll))elseif new_IIlIlIlllIIIIIllIl==#("xu00l4CjxoTT4Fk4C")then local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("IO")]new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("jfZ")]))else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ox")]][new_IllIIlllIlIllIllIl[#("oNl")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rZ1s")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("PC9zyeebT15yUsly6GxbU")then if new_IIlIlIlllIIIIIllIl<=#("5Ag3lENTmava5Pm77WW")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ov")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{10;609;79;600};"1 + 1 = 111";}]];elseif new_IIlIlIlllIIIIIllIl==#("lLn9EBHGJPIAF9GJrE2L")then local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("K8")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("lxF")]][new_IllIIlllIlIllIllIl[#("ieNu")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("RN")]]=new_IllIIlllIlIllIllIl[#("XGi")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("2o")]]=new_IllIIlllIlIllIllIl[#("2ZC")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("uT")]]=new_IllIIlllIlIllIllIl[#("ZQE")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("SG")]]=new_IllIIlllIlIllIllIl[#("HLS")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("Ao")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("b6o")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("vF")]][new_IllIIlllIlIllIllIl[#("Wgi")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("bPin")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{386;282;641;621};}]][new_IllIIlllIlIllIllIl[#("KNh")]]=new_IllIIlllIlIllIllIl[#("Eg47")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{{184;164;447;416};"1 + 1 = 111";}]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("F3W")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("36")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("3a4")]][new_IllIIlllIlIllIllIl[#{{541;86;452;31};"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];else do return end;end;elseif new_IIlIlIlllIIIIIllIl<=#("aO5bUxGl8ILpLDumhzV6gjI")then if new_IIlIlIlllIIIIIllIl==#("5F5jOPD3lUl6r7UdbuKg6j")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("UT")]][new_IllIIlllIlIllIllIl[#("8s2")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("0KOb")]];else local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zt")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("Oqg")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#{{555;58;986;332};"1 + 1 = 111";}]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("joJ")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("PR")]][new_IllIIlllIlIllIllIl[#("r1M")]]=new_IllIIlllIlIllIllIl[#("MKEU")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{{508;983;257;617};"1 + 1 = 111";}]][new_IllIIlllIlIllIllIl[#("hQe")]]=new_IllIIlllIlIllIllIl[#{{679;270;20;667};"1 + 1 = 111";{112;712;746;24};{360;429;370;336};}];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("RZ")]][new_IllIIlllIlIllIllIl[#("x5S")]]=new_IllIIlllIlIllIllIl[#("mdCn")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zZ")]][new_IllIIlllIlIllIllIl[#("Scd")]]=new_IllIIlllIlIllIllIl[#("SlnU")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];do return end;end;elseif new_IIlIlIlllIIIIIllIl==#("GlxkehOs0gDfpCxHsfSe0ry4")then local new_IIIIllIllIIIlIIIlIIIIll;local new_llIIlllIlIlIIIlllIIllIIll,new_lIlIlIIIllIlIIlIllI;local new_lIlllIIlllIIIIlIII;local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("92")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("3Sd")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("yi")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("QCt")]][new_IllIIlllIlIllIllIl[#("k0X5")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("mS")]]=new_IllIIlllIlIllIllIl[#("d4k")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("q8")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("aKc")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("8L")];new_lIlllIIlllIIIIlIII=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("dvh")]];new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl+1]=new_lIlllIIlllIIIIlIII;new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_lIlllIIlllIIIIlIII[new_IllIIlllIlIllIllIl[#{{252;882;507;823};"1 + 1 = 111";"1 + 1 = 111";{36;276;365;175};}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Ns")]]=new_IllIIlllIlIllIllIl[#("rHN")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("XH")]new_llIIlllIlIlIIIlllIIllIIll,new_lIlIlIIIllIlIIlIllI=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("6o2")])))new_IIlIIIlIllIIlll=new_lIlIlIIIllIlIIlIllI+new_IIlIlIlllIIIIIllIl-1 new_IIIIllIllIIIlIIIlIIIIll=0;for new_IllIIlllIlIllIllIl=new_IIlIlIlllIIIIIllIl,new_IIlIIIlIllIIlll do new_IIIIllIllIIIlIIIlIIIIll=new_IIIIllIllIIIlIIIlIIIIll+1;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_llIIlllIlIlIIIlllIIllIIll[new_IIIIllIllIIIlIIIlIIIIll];end;new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#{{773;433;582;199};{23;386;333;405};}]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IIlIIIlIllIIlll))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("bu")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Er")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("nkP")]][new_IllIIlllIlIllIllIl[#("JALH")]];else local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl[#("VF")];local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("kce")]];new_IlIllllIIIIlIIIIIIlI[new_IlIllllIlIllIIIlIIllIllI+1]=new_IlIIIlIlllIlIllIlIIII;new_IlIllllIIIIlIIIIIIlI[new_IlIllllIlIllIIIlIIllIllI]=new_IlIIIlIlllIlIllIlIIII[new_IllIIlllIlIllIllIl[#("Blyi")]];end;new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;end;end);end;return new_IIIlIllllIIIllIllll(true,{},new_IllllIllIllIIlIll())();end)(string.byte,table.insert,setmetatable);
+	return(function(new_IIIIllIllIIIlIIIlIIIIll,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl)local new_llllllllIllllIlllII=string.char;local new_IIlIlIlllIIIIIllIl=string.sub;local new_IIIIllIlIIlIIIIIlII=table.concat;local new_IIIlIllllIIIllIllll=math.ldexp;local new_IllllIllIllIIlIll=getfenv or function()return _ENV end;local new_llIIlllIlIlIIIlllIIllIIll=select;local new_IllIlIIlIlIIllllIIIlIII=unpack or table.unpack;local new_lIlllIIlllIIIIlIII=tonumber;local function new_lIlIlIIIllIlIIlIllI(new_IllIlIIIlIII)local new_IlIIIlIlllIlIllIlIIII,new_IlIllllIIIIlIIIIIIlI,new_IlIllllIlIllIIIlIIllIllI="","",{}local new_IIlIIIlIllIIlll=256;local new_IllIlIIlIlIIllllIIIlIII={}for new_IllIIlllIlIllIllIl=0,new_IIlIIIlIllIIlll-1 do new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]=new_llllllllIllllIlllII(new_IllIIlllIlIllIllIl)end;local new_IllIIlllIlIllIllIl=1;local function new_IIIIllIllIIIlIIIlIIIIll()local new_IlIIIlIlllIlIllIlIIII=new_lIlllIIlllIIIIlIII(new_IIlIlIlllIIIIIllIl(new_IllIlIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl),36)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;local new_IlIllllIIIIlIIIIIIlI=new_lIlllIIlllIIIIlIII(new_IIlIlIlllIIIIIllIl(new_IllIlIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1),36)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII;return new_IlIllllIIIIlIIIIIIlI end;new_IlIIIlIlllIlIllIlIIII=new_llllllllIllllIlllII(new_IIIIllIllIIIlIIIlIIIIll())new_IlIllllIlIllIIIlIIllIllI[1]=new_IlIIIlIlllIlIllIlIIII;while new_IllIIlllIlIllIllIl<#new_IllIlIIIlIII do local new_IllIIlllIlIllIllIl=new_IIIIllIllIIIlIIIlIIIIll()if new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]then new_IlIllllIIIIlIIIIIIlI=new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]else new_IlIllllIIIIlIIIIIIlI=new_IlIIIlIlllIlIllIlIIII..new_IIlIlIlllIIIIIllIl(new_IlIIIlIlllIlIllIlIIII,1,1)end;new_IllIlIIlIlIIllllIIIlIII[new_IIlIIIlIllIIlll]=new_IlIIIlIlllIlIllIlIIII..new_IIlIlIlllIIIIIllIl(new_IlIllllIIIIlIIIIIIlI,1,1)new_IlIllllIlIllIIIlIIllIllI[#new_IlIllllIlIllIIIlIIllIllI+1],new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll=new_IlIllllIIIIlIIIIIIlI,new_IlIllllIIIIlIIIIIIlI,new_IIlIIIlIllIIlll+1 end;return table.concat(new_IlIllllIlIllIIIlIIllIllI)end;local new_lIlllIIlllIIIIlIII=new_lIlIlIIIllIlIIlIllI('22A22727522621Z275227161X21O21N21A1X2182162262242791X21621K22621Y2791S21821P2162161X1821M21222622327921421A1Y27I21X2791821621N1S21621P21L21227H2262202791C1W27U27Y280288275161Y21A2142161321A2192161Z2812791128527I27827521P28H21021P1W1Z29222N2791D21A21821021429D21M1X21728M1Z28N23G22622128L29E29U28J27921529D1Y1T181D27K27922724V1W1F2932751S21221H27I2222791Q1B2121Y23H2A92AA2752AS27521F2621F2AV22723J25L2AE2AL28S28U28W22622J27921P21921J21A21O21O28B21221723922O22O23E23C23D2BQ23E23B2262B52271S1W29P21727P27921K28N21021O21R29K27I28K2AG2BY29Q162C022G2BB2BD2BF2BH21N2BJ2BL22O23F2BQ23H23F23E23H23E23I23E2A12751V1Z21A21I2121X21422722629W279131W1W21R2162C029X2751P29E21M2862B022722Z1F22722V27922L22F2792262792332AT22722522722L2762272AS2E42E12272822752DZ2E92E22AL2E82822DH2AA2E22EB2E02752E22E82DX2DX2EC2E52DX2EP2E22E22CA2752882DN2E527K2E223J2AA27827Q2E82E221W2DY2EO2E921V2E32AU22721U2DT2752822FK2752E82AL2FO2EK2272AL2E229H2D72272882EP21T2E921S2DY2BA2EX2E92E827K2FX2FH2EA22722M2FL2FU2272GB2E829X2E82FT29X2FW2E52G22F52E522K2272BA2FA2FY2ET2EE2G82E227K22I2DT2CG28222H2E02EL2E92F62E92CG2DV2HC2E222E22722D2B12FE22C2HJ2HL2E922B2272742AT2ES2AT');local new_IllIIlllIlIllIllIl=(bit or bit32);local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl and new_IllIIlllIlIllIllIl.bxor or function(new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI)local new_IlIIIlIlllIlIllIlIIII,new_IlIllllIlIllIIIlIIllIllI,new_IIlIlIlllIIIIIllIl=1,0,10 while new_IllIIlllIlIllIllIl>0 and new_IlIllllIIIIlIIIIIIlI>0 do local new_IllIlIIlIlIIllllIIIlIII,new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl%2,new_IlIllllIIIIlIIIIIIlI%2 if new_IllIlIIlIlIIllllIIIlIII~=new_IIlIlIlllIIIIIllIl then new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIlIllIIIlIIllIllI+new_IlIIIlIlllIlIllIlIIII end new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII=(new_IllIIlllIlIllIllIl-new_IllIlIIlIlIIllllIIIlIII)/2,(new_IlIllllIIIIlIIIIIIlI-new_IIlIlIlllIIIIIllIl)/2,new_IlIIIlIlllIlIllIlIIII*2 end if new_IllIIlllIlIllIllIl<new_IlIllllIIIIlIIIIIIlI then new_IllIIlllIlIllIllIl=new_IlIllllIIIIlIIIIIIlI end while new_IllIIlllIlIllIllIl>0 do local new_IlIllllIIIIlIIIIIIlI=new_IllIIlllIlIllIllIl%2 if new_IlIllllIIIIlIIIIIIlI>0 then new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIlIllIIIlIIllIllI+new_IlIIIlIlllIlIllIlIIII end new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII=(new_IllIIlllIlIllIllIl-new_IlIllllIIIIlIIIIIIlI)/2,new_IlIIIlIlllIlIllIlIIII*2 end return new_IlIllllIlIllIIIlIIllIllI end local function new_IlIllllIIIIlIIIIIIlI(new_IlIIIlIlllIlIllIlIIII,new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI)if new_IlIllllIIIIlIIIIIIlI then local new_IllIIlllIlIllIllIl=(new_IlIIIlIlllIlIllIlIIII/2^(new_IllIIlllIlIllIllIl-1))%2^((new_IlIllllIIIIlIIIIIIlI-1)-(new_IllIIlllIlIllIllIl-1)+1);return new_IllIIlllIlIllIllIl-new_IllIIlllIlIllIllIl%1;else local new_IllIIlllIlIllIllIl=2^(new_IllIIlllIlIllIllIl-1);return(new_IlIIIlIlllIlIllIlIIII%(new_IllIIlllIlIllIllIl+new_IllIIlllIlIllIllIl)>=new_IllIIlllIlIllIllIl)and 1 or 0;end;end;local new_IllIIlllIlIllIllIl=1;local function new_IlIIIlIlllIlIllIlIIII()local new_IIlIlIlllIIIIIllIl,new_IllIlIIlIlIIllllIIIlIII,new_IlIIIlIlllIlIllIlIIII,new_IlIllllIIIIlIIIIIIlI=new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+3);new_IIlIlIlllIIIIIllIl=new_IlIllllIlIllIIIlIIllIllI(new_IIlIlIlllIIIIIllIl,79)new_IllIlIIlIlIIllllIIIlIII=new_IlIllllIlIllIIIlIIllIllI(new_IllIlIIlIlIIllllIIIlIII,79)new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IlIIIlIlllIlIllIlIIII,79)new_IlIllllIIIIlIIIIIIlI=new_IlIllllIlIllIIIlIIllIllI(new_IlIllllIIIIlIIIIIIlI,79)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+4;return(new_IlIllllIIIIlIIIIIIlI*16777216)+(new_IlIIIlIlllIlIllIlIIII*65536)+(new_IllIlIIlIlIIllllIIIlIII*256)+new_IIlIlIlllIIIIIllIl;end;local function new_IllIlIIIlIII()local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl),79);new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;return new_IlIIIlIlllIlIllIlIIII;end;local function new_IIlIIIlIllIIlll()local new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII=new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+2);new_IlIllllIIIIlIIIIIIlI=new_IlIllllIlIllIIIlIIllIllI(new_IlIllllIIIIlIIIIIIlI,79)new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IlIIIlIlllIlIllIlIIII,79)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+2;return(new_IlIIIlIlllIlIllIlIIII*256)+new_IlIllllIIIIlIIIIIIlI;end;local function new_lIlIlIIIllIlIIlIllI()local new_IlIllllIlIllIIIlIIllIllI=new_IlIIIlIlllIlIllIlIIII();local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII();local new_IIlIlIlllIIIIIllIl=1;local new_IlIllllIlIllIIIlIIllIllI=(new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,1,20)*(2^32))+new_IlIllllIlIllIIIlIIllIllI;local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,21,31);local new_IllIIlllIlIllIllIl=((-1)^new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,32));if(new_IlIIIlIlllIlIllIlIIII==0)then if(new_IlIllllIlIllIIIlIIllIllI==0)then return new_IllIIlllIlIllIllIl*0;else new_IlIIIlIlllIlIllIlIIII=1;new_IIlIlIlllIIIIIllIl=0;end;elseif(new_IlIIIlIlllIlIllIlIIII==2047)then return(new_IlIllllIlIllIIIlIIllIllI==0)and(new_IllIIlllIlIllIllIl*(1/0))or(new_IllIIlllIlIllIllIl*(0/0));end;return new_IIIlIllllIIIllIllll(new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII-1023)*(new_IIlIlIlllIIIIIllIl+(new_IlIllllIlIllIIIlIIllIllI/(2^52)));end;local new_Illlllll=new_IlIIIlIlllIlIllIlIIII;local function new_IIIlIllllIIIllIllll(new_IlIIIlIlllIlIllIlIIII)local new_IlIllllIIIIlIIIIIIlI;if(not new_IlIIIlIlllIlIllIlIIII)then new_IlIIIlIlllIlIllIlIIII=new_Illlllll();if(new_IlIIIlIlllIlIllIlIIII==0)then return'';end;end;new_IlIllllIIIIlIIIIIIlI=new_IIlIlIlllIIIIIllIl(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1);new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII;local new_IlIIIlIlllIlIllIlIIII={}for new_IllIIlllIlIllIllIl=1,#new_IlIllllIIIIlIIIIIIlI do new_IlIIIlIlllIlIllIlIIII[new_IllIIlllIlIllIllIl]=new_llllllllIllllIlllII(new_IlIllllIlIllIIIlIIllIllI(new_IIIIllIllIIIlIIIlIIIIll(new_IIlIlIlllIIIIIllIl(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl)),79))end return new_IIIIllIlIIlIIIIIlII(new_IlIIIlIlllIlIllIlIIII);end;local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII;local function new_Illlllll(...)return{...},new_llIIlllIlIlIIIlllIIllIIll('#',...)end local function new_llllllllIllllIlllII()local new_llIIlllIlIlIIIlllIIllIIll={};local new_lIlllIIlllIIIIlIII={};local new_IllIIlllIlIllIllIl={};local new_IIIIllIllIIIlIIIlIIIIll={[#{{294;243;590;992};{332;957;100;785};}]=new_lIlllIIlllIIIIlIII,[#{{548;773;809;936};"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{"1 + 1 = 111";{700;808;208;757};"1 + 1 = 111";"1 + 1 = 111";}]=new_IllIIlllIlIllIllIl,[#{"1 + 1 = 111";}]=new_llIIlllIlIlIIIlllIIllIIll,};local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII()local new_IIlIlIlllIIIIIllIl={}for new_IlIllllIIIIlIIIIIIlI=1,new_IllIIlllIlIllIllIl do local new_IlIIIlIlllIlIllIlIIII=new_IllIlIIIlIII();local new_IllIIlllIlIllIllIl;if(new_IlIIIlIlllIlIllIlIIII==0)then new_IllIIlllIlIllIllIl=(new_IllIlIIIlIII()~=0);elseif(new_IlIIIlIlllIlIllIlIIII==3)then new_IllIIlllIlIllIllIl=new_lIlIlIIIllIlIIlIllI();elseif(new_IlIIIlIlllIlIllIlIIII==1)then new_IllIIlllIlIllIllIl=new_IIIlIllllIIIllIllll();end;new_IIlIlIlllIIIIIllIl[new_IlIllllIIIIlIIIIIIlI]=new_IllIIlllIlIllIllIl;end;new_IIIIllIllIIIlIIIlIIIIll[3]=new_IllIlIIIlIII();for new_IIIIllIllIIIlIIIlIIIIll=1,new_IlIIIlIlllIlIllIlIIII()do local new_IllIIlllIlIllIllIl=new_IllIlIIIlIII();if(new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,1,1)==0)then local new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,2,3);local new_IllIlIIlIlIIllllIIIlIII=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,4,6);local new_IllIIlllIlIllIllIl={new_IIlIIIlIllIIlll(),new_IIlIIIlIllIIlll(),nil,nil};if(new_IlIllllIlIllIIIlIIllIllI==0)then new_IllIIlllIlIllIllIl[#("uU1")]=new_IIlIIIlIllIIlll();new_IllIIlllIlIllIllIl[#("I3ln")]=new_IIlIIIlIllIIlll();elseif(new_IlIllllIlIllIIIlIIllIllI==1)then new_IllIIlllIlIllIllIl[#("bk5")]=new_IlIIIlIlllIlIllIlIIII();elseif(new_IlIllllIlIllIIIlIIllIllI==2)then new_IllIIlllIlIllIllIl[#("CCz")]=new_IlIIIlIlllIlIllIlIIII()-(2^16)elseif(new_IlIllllIlIllIIIlIIllIllI==3)then new_IllIIlllIlIllIllIl[#("ShH")]=new_IlIIIlIlllIlIllIlIIII()-(2^16)new_IllIIlllIlIllIllIl[#("JQW3")]=new_IIlIIIlIllIIlll();end;if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,1,1)==1)then new_IllIIlllIlIllIllIl[#("5V")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("BG")]]end if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,2,2)==1)then new_IllIIlllIlIllIllIl[#("dH4")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("rdl")]]end if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,3,3)==1)then new_IllIIlllIlIllIllIl[#("kv5A")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("xe0L")]]end new_llIIlllIlIlIIIlllIIllIIll[new_IIIIllIllIIIlIIIlIIIIll]=new_IllIIlllIlIllIllIl;end end;for new_IllIIlllIlIllIllIl=1,new_IlIIIlIlllIlIllIlIIII()do new_lIlllIIlllIIIIlIII[new_IllIIlllIlIllIllIl-1]=new_llllllllIllllIlllII();end;return new_IIIIllIllIIIlIIIlIIIIll;end;local function new_IIIlIllllIIIllIllll(new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII,new_IllIlIIIlIII)new_IllIIlllIlIllIllIl=(new_IllIIlllIlIllIllIl==true and new_llllllllIllllIlllII())or new_IllIIlllIlIllIllIl;return(function(...)local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl[1];local new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[3];local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[2];local new_llllllllIllllIlllII=new_Illlllll local new_IlIIIlIlllIlIllIlIIII=1;local new_IIlIIIlIllIIlll=-1;local new_lIlIlIIIllIlIIlIllI={};local new_IIIIllIllIIIlIIIlIIIIll={...};local new_lIlllIIlllIIIIlIII=new_llIIlllIlIlIIIlllIIllIIll('#',...)-1;local new_IllIIlllIlIllIllIl={};local new_IlIllllIIIIlIIIIIIlI={};for new_IllIIlllIlIllIllIl=0,new_lIlllIIlllIIIIlIII do if(new_IllIIlllIlIllIllIl>=new_IIlIlIlllIIIIIllIl)then new_lIlIlIIIllIlIIlIllI[new_IllIIlllIlIllIllIl-new_IIlIlIlllIIIIIllIl]=new_IIIIllIllIIIlIIIlIIIIll[new_IllIIlllIlIllIllIl+1];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IIIIllIllIIIlIIIlIIIIll[new_IllIIlllIlIllIllIl+#{{311;373;604;964};}];end;end;local new_IllIIlllIlIllIllIl=new_lIlllIIlllIIIIlIII-new_IIlIlIlllIIIIIllIl+1 local new_IllIIlllIlIllIllIl;local new_IIlIlIlllIIIIIllIl;while true do new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("P")];if new_IIlIlIlllIIIIIllIl<=#("x5HoznD6QVU1")then if new_IIlIlIlllIIIIIllIl<=#("lcPAD")then if new_IIlIlIlllIIIIIllIl<=#("db")then if new_IIlIlIlllIIIIIllIl<=#("")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Kz")]]=new_IllIIlllIlIllIllIl[#("cxY")];elseif new_IIlIlIlllIIIIIllIl>#("d")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rF")]]=new_IllIIlllIlIllIllIl[#("TAj")];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("VH")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ElO")]][new_IllIIlllIlIllIllIl[#("KqiB")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("5vL")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("uZ")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("iFq")]];elseif new_IIlIlIlllIIIIIllIl==#("5xeE")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("2E")]][new_IllIIlllIlIllIllIl[#{{525;111;766;49};{742;869;750;37};"1 + 1 = 111";}]]=new_IllIIlllIlIllIllIl[#("Jr05")];else do return end;end;elseif new_IIlIlIlllIIIIIllIl<=#("ZiXUkgnQ")then if new_IIlIlIlllIIIIIllIl<=#("DRdpCD")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("OX")]][new_IllIIlllIlIllIllIl[#("res")]]=new_IllIIlllIlIllIllIl[#("kbrr")];elseif new_IIlIlIlllIIIIIllIl==#("cZH2vjp")then local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[#("bo")]new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl+1,new_IIlIIIlIllIIlll))else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#{{116;213;167;12};"1 + 1 = 111";}];local new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("j2n")]];new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII+1]=new_IlIllllIlIllIIIlIIllIllI;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{150;285;955;601};}]];end;elseif new_IIlIlIlllIIIIIllIl<=#("sE12iUyQxZ")then if new_IIlIlIlllIIIIIllIl>#("31Qsr0uUm")then local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Cb")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("02Z")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("BS")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("IPf")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("qQ")]][new_IllIIlllIlIllIllIl[#("vD6")]]=new_IllIIlllIlIllIllIl[#("Jfjn")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("tP")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{243;813;31;458};"1 + 1 = 111";}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";}]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("DQD")]][new_IllIIlllIlIllIllIl[#("qRXF")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("R6")]]=new_IllIIlllIlIllIllIl[#("p2V")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("A6")]]=new_IllIIlllIlIllIllIl[#("B04")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("fr")]]=new_IllIIlllIlIllIllIl[#("dMs")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("er")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("mxP")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rz")]][new_IllIIlllIlIllIllIl[#("vxs")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("xuCN")]];else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("RG")]local new_IlIllllIlIllIIIlIIllIllI,new_IllIIlllIlIllIllIl=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("AMQ")])))new_IIlIIIlIllIIlll=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1 local new_IllIIlllIlIllIllIl=0;for new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll do new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl];end;end;elseif new_IIlIlIlllIIIIIllIl>#("2P4h43HHM7P")then local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("kZ")]new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("4Lc")]))else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("8u")]local new_IlIllllIlIllIIIlIIllIllI,new_IllIIlllIlIllIllIl=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("0VT")])))new_IIlIIIlIllIIlll=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1 local new_IllIIlllIlIllIllIl=0;for new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll do new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl];end;end;elseif new_IIlIlIlllIIIIIllIl<=#("tBRpuHSebQBfJbxHoc")then if new_IIlIlIlllIIIIIllIl<=#{"1 + 1 = 111";{926;235;975;938};"1 + 1 = 111";"1 + 1 = 111";{969;892;160;206};{778;89;836;399};{298;865;140;487};"1 + 1 = 111";{396;934;18;226};{489;620;355;883};"1 + 1 = 111";{857;959;697;559};{666;833;528;497};{148;4;577;799};{157;925;557;339};}then if new_IIlIlIlllIIIIIllIl<=#("oMcFXbiuloZJ2")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("3e")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zOH")]];elseif new_IIlIlIlllIIIIIllIl>#("arJ6o0la2sKs1n")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("1I")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("hz0")]][new_IllIIlllIlIllIllIl[#("rVV6")]];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Jp")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("VgL")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("5JyKEi5mHny4XpKh")then local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[#("Dt")]new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl+1,new_IIlIIIlIllIIlll))elseif new_IIlIlIlllIIIIIllIl==#("xu00l4CjxoTT4Fk4C")then local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("IO")]new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("jfZ")]))else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ox")]][new_IllIIlllIlIllIllIl[#("oNl")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rZ1s")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("PC9zyeebT15yUsly6GxbU")then if new_IIlIlIlllIIIIIllIl<=#("5Ag3lENTmava5Pm77WW")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ov")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{10;609;79;600};"1 + 1 = 111";}]];elseif new_IIlIlIlllIIIIIllIl==#("lLn9EBHGJPIAF9GJrE2L")then local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("K8")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("lxF")]][new_IllIIlllIlIllIllIl[#("ieNu")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("RN")]]=new_IllIIlllIlIllIllIl[#("XGi")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("2o")]]=new_IllIIlllIlIllIllIl[#("2ZC")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("uT")]]=new_IllIIlllIlIllIllIl[#("ZQE")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("SG")]]=new_IllIIlllIlIllIllIl[#("HLS")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("Ao")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("b6o")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("vF")]][new_IllIIlllIlIllIllIl[#("Wgi")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("bPin")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{386;282;641;621};}]][new_IllIIlllIlIllIllIl[#("KNh")]]=new_IllIIlllIlIllIllIl[#("Eg47")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{{184;164;447;416};"1 + 1 = 111";}]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("F3W")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("36")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("3a4")]][new_IllIIlllIlIllIllIl[#{{541;86;452;31};"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];else do return end;end;elseif new_IIlIlIlllIIIIIllIl<=#("aO5bUxGl8ILpLDumhzV6gjI")then if new_IIlIlIlllIIIIIllIl==#("5F5jOPD3lUl6r7UdbuKg6j")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("UT")]][new_IllIIlllIlIllIllIl[#("8s2")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("0KOb")]];else local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zt")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("Oqg")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#{{555;58;986;332};"1 + 1 = 111";}]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("joJ")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("PR")]][new_IllIIlllIlIllIllIl[#("r1M")]]=new_IllIIlllIlIllIllIl[#("MKEU")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{{508;983;257;617};"1 + 1 = 111";}]][new_IllIIlllIlIllIllIl[#("hQe")]]=new_IllIIlllIlIllIllIl[#{{679;270;20;667};"1 + 1 = 111";{112;712;746;24};{360;429;370;336};}];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("RZ")]][new_IllIIlllIlIllIllIl[#("x5S")]]=new_IllIIlllIlIllIllIl[#("mdCn")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zZ")]][new_IllIIlllIlIllIllIl[#("Scd")]]=new_IllIIlllIlIllIllIl[#("SlnU")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];do return end;end;elseif new_IIlIlIlllIIIIIllIl==#("GlxkehOs0gDfpCxHsfSe0ry4")then local new_IIIIllIllIIIlIIIlIIIIll;local new_llIIlllIlIlIIIlllIIllIIll,new_lIlIlIIIllIlIIlIllI;local new_lIlllIIlllIIIIlIII;local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("92")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("3Sd")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("yi")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("QCt")]][new_IllIIlllIlIllIllIl[#("k0X5")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("mS")]]=new_IllIIlllIlIllIllIl[#("d4k")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("q8")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("aKc")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("8L")];new_lIlllIIlllIIIIlIII=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("dvh")]];new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl+1]=new_lIlllIIlllIIIIlIII;new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_lIlllIIlllIIIIlIII[new_IllIIlllIlIllIllIl[#{{252;882;507;823};"1 + 1 = 111";"1 + 1 = 111";{36;276;365;175};}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Ns")]]=new_IllIIlllIlIllIllIl[#("rHN")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("XH")]new_llIIlllIlIlIIIlllIIllIIll,new_lIlIlIIIllIlIIlIllI=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("6o2")])))new_IIlIIIlIllIIlll=new_lIlIlIIIllIlIIlIllI+new_IIlIlIlllIIIIIllIl-1 new_IIIIllIllIIIlIIIlIIIIll=0;for new_IllIIlllIlIllIllIl=new_IIlIlIlllIIIIIllIl,new_IIlIIIlIllIIlll do new_IIIIllIllIIIlIIIlIIIIll=new_IIIIllIllIIIlIIIlIIIIll+1;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_llIIlllIlIlIIIlllIIllIIll[new_IIIIllIllIIIlIIIlIIIIll];end;new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#{{773;433;582;199};{23;386;333;405};}]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IIlIIIlIllIIlll))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("bu")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Er")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("nkP")]][new_IllIIlllIlIllIllIl[#("JALH")]];else local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl[#("VF")];local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("kce")]];new_IlIllllIIIIlIIIIIIlI[new_IlIllllIlIllIIIlIIllIllI+1]=new_IlIIIlIlllIlIllIlIIII;new_IlIllllIIIIlIIIIIIlI[new_IlIllllIlIllIIIlIIllIllI]=new_IlIIIlIlllIlIllIlIIII[new_IllIIlllIlIllIllIl[#("Blyi")]];end;new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;end;end);end;return new_IIIlIllllIIIllIllll(true,{},new_IllllIllIllIIlIll())();end)(string.byte,table.insert,setmetatable);
 end)
 
 UICorner_9.CornerRadius = UDim.new(0, 3)
@@ -591,7 +593,7 @@ FistReach.TextColor3 = Color3.fromRGB(255, 255, 255)
 FistReach.TextSize = 20.000
 FistReach.TextWrapped = true
 FistReach.MouseButton1Down:connect(function()
-		loadstring(game:HttpGet('https://pastebin.com/raw/aZHK690D'))()
+	loadstring(game:HttpGet('https://pastebin.com/raw/aZHK690D'))()
 end)
 
 UICorner_11.CornerRadius = UDim.new(0, 3)
@@ -609,7 +611,7 @@ BigKnife.TextColor3 = Color3.fromRGB(255, 255, 255)
 BigKnife.TextSize = 20.000
 BigKnife.TextWrapped = true
 BigKnife.MouseButton1Down:connect(function()
-		game.Players.LocalPlayer.Backpack["[Knife]"].Handle.Size = Vector3.new(50, 50, 50)
+	game.Players.LocalPlayer.Backpack["[Knife]"].Handle.Size = Vector3.new(50, 50, 50)
 end)
 
 UICorner_12.CornerRadius = UDim.new(0, 3)
@@ -627,7 +629,7 @@ BigSledge.TextColor3 = Color3.fromRGB(255, 255, 255)
 BigSledge.TextSize = 20.000
 BigSledge.TextWrapped = true
 BigSledge.MouseButton1Down:connect(function()
-		game.Players.LocalPlayer.Backpack["[SledgeHammer]"].Handle.Size = Vector3.new(50, 50, 50)
+	game.Players.LocalPlayer.Backpack["[SledgeHammer]"].Handle.Size = Vector3.new(50, 50, 50)
 end)
 
 UICorner_13.CornerRadius = UDim.new(0, 3)
@@ -645,14 +647,14 @@ KnifePP.TextColor3 = Color3.fromRGB(255, 255, 255)
 KnifePP.TextSize = 20.000
 KnifePP.TextWrapped = true
 KnifePP.MouseButton1Down:connect(function()
-		local Plr = game.Players.LocalPlayer
-		local LastPos = Plr.Character.HumanoidRootPart.CFrame
-		wait(0.1)
-		Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-		Plr.Character["[Knife]"].Handle.Orientation = Vector3.new(0, 180, 0)
-		wait(0.2)
-		Plr.Character["[Knife]"].Handle.Position = Vector3.new(804.3, 47, -547)
-		Plr.Character.HumanoidRootPart.CFrame = LastPos
+	local Plr = game.Players.LocalPlayer
+	local LastPos = Plr.Character.HumanoidRootPart.CFrame
+	wait(0.1)
+	Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Plr.Character["[Knife]"].Handle.Orientation = Vector3.new(0, 180, 0)
+	wait(0.2)
+	Plr.Character["[Knife]"].Handle.Position = Vector3.new(804.3, 47, -547)
+	Plr.Character.HumanoidRootPart.CFrame = LastPos
 
 end)
 
@@ -671,17 +673,17 @@ StopSignPP.TextColor3 = Color3.fromRGB(255, 255, 255)
 StopSignPP.TextSize = 20.000
 StopSignPP.TextWrapped = true
 StopSignPP.MouseButton1Down:connect(function()
-		local Plr = game.Players.LocalPlayer
-		local LastPos = Plr.Character.HumanoidRootPart.CFrame
-		local pp = Plr.Character["[StopSign]"]
-		wait(0.1)
-		pp.Sign:Destroy()
-		--pp.GripRight = Vector3.new(0, 0, 1)
-		--pp.GripForward = Vector3.new(1, 0, 0)
-		--pp.GripUp = Vector3.new(0, 1, 0)
-		--pp.GripPos = Vector3.new(-1, 2, 1.45)
+	local Plr = game.Players.LocalPlayer
+	local LastPos = Plr.Character.HumanoidRootPart.CFrame
+	local pp = Plr.Character["[StopSign]"]
+	wait(0.1)
+	pp.Sign:Destroy()
+	--pp.GripRight = Vector3.new(0, 0, 1)
+	--pp.GripForward = Vector3.new(1, 0, 0)
+	--pp.GripUp = Vector3.new(0, 1, 0)
+	--pp.GripPos = Vector3.new(-1, 2, 1.45)
 
-		pp.Grip = CFrame.new(-1, 2, 1.45000005, 0, -0, -1, -0, 1, -0, 1, 0, -0)
+	pp.Grip = CFrame.new(-1, 2, 1.45000005, 0, -0, -1, -0, 1, -0, 1, 0, -0)
 end)
 
 UICorner_15.CornerRadius = UDim.new(0, 3)
@@ -699,131 +701,130 @@ Aimlock.TextColor3 = Color3.fromRGB(255, 255, 255)
 Aimlock.TextSize = 20.000
 Aimlock.TextWrapped = true
 Aimlock.MouseButton1Down:connect(function()
-		local CC = game:GetService'Workspace'.CurrentCamera
-		local Plr
-		local enabled = false
-		local accomidationfactor = 0.165
-		local mouse = game.Players.LocalPlayer:GetMouse()
-		local placemarker = Instance.new("Part", game.Workspace)
-		local guimain = Instance.new("Folder", game.CoreGui)
+	local CC = game:GetService'Workspace'.CurrentCamera
+	local Plr
+	local enabled = false
+	local accomidationfactor = 0.165
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	local placemarker = Instance.new("Part", game.Workspace)
+	local guimain = Instance.new("Folder", game.CoreGui)
 
-		function makemarker(Parent, Adornee, Color, Size, Size2)
-			local e = Instance.new("BillboardGui", Parent)
-			e.Name = "PP"
-			e.Adornee = Adornee
-			e.Size = UDim2.new(Size, Size2, Size, Size2)
-			e.AlwaysOnTop = true
-			local a = Instance.new("Frame", e)
-			a.Size = UDim2.new(1, 0, 1, 0)
-			a.BackgroundTransparency = 0.4
-			a.BackgroundColor3 = Color
-			local g = Instance.new("UICorner", a)
-			g.CornerRadius = UDim.new(50, 50)
-			return(e)
-		end
+	function makemarker(Parent, Adornee, Color, Size, Size2)
+		local e = Instance.new("BillboardGui", Parent)
+		e.Name = "PP"
+		e.Adornee = Adornee
+		e.Size = UDim2.new(Size, Size2, Size, Size2)
+		e.AlwaysOnTop = true
+		local a = Instance.new("Frame", e)
+		a.Size = UDim2.new(1, 0, 1, 0)
+		a.BackgroundTransparency = 0.4
+		a.BackgroundColor3 = Color
+		local g = Instance.new("UICorner", a)
+		g.CornerRadius = UDim.new(50, 50)
+		return(e)
+	end
 
-		local data = game.Players:GetPlayers()
-		function noob(player)
-			local character
-			repeat wait() until player.Character
-			local handler = makemarker(guimain, player.Character:WaitForChild("Head"), Color3.fromRGB(255, 255, 255), 0.3, 3)
-			handler.Name = player.Name
-			player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild("Head") end)
+	local data = game.Players:GetPlayers()
+	function noob(player)
+		local character
+		repeat wait() until player.Character
+		local handler = makemarker(guimain, player.Character:WaitForChild("Head"), Color3.fromRGB(255, 255, 255), 0.3, 3)
+		handler.Name = player.Name
+		player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild("Head") end)
 
-			local TextLabel = Instance.new("TextLabel", handler)
-			TextLabel.BackgroundTransparency = 1
-			TextLabel.Position = UDim2.new(0, 0, 0, -50)
-			TextLabel.Size = UDim2.new(0, 100, 0, 100)
-			TextLabel.Font = Enum.Font.SourceSansSemibold
-			TextLabel.TextSize = 14
-			TextLabel.TextColor3 = Color3.new(1, 1, 1)
-			TextLabel.TextStrokeTransparency = 0
-			TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
-			TextLabel.Text = 'Name: '..player.Name
-			TextLabel.ZIndex = 10
-
-			spawn(function()
-				while wait() do
-					if player.Character then
-						TextLabel.Text = player.Name.." | Bounty: "..tostring(player:WaitForChild("leaderstats").Wanted.Value).." | "..tostring(math.floor(player.Character:WaitForChild("Humanoid").Health))
-					end
-				end
-			end)
-		end
-
-		for i = 1, #data do
-			if data[i] ~= game.Players.LocalPlayer then
-				noob(data[i])
-			end
-		end
-
-		game.Players.PlayerAdded:connect(function(Player)
-			noob(Player)
-		end)
+		local TextLabel = Instance.new("TextLabel", handler)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.Position = UDim2.new(0, 0, 0, -50)
+		TextLabel.Size = UDim2.new(0, 100, 0, 100)
+		TextLabel.Font = Enum.Font.SourceSansSemibold
+		TextLabel.TextSize = 14
+		TextLabel.TextColor3 = Color3.new(1, 1, 1)
+		TextLabel.TextStrokeTransparency = 0
+		TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+		TextLabel.Text = 'Name: '..player.Name
+		TextLabel.ZIndex = 10
 
 		spawn(function()
-			placemarker.Anchored = true
-			placemarker.CanCollide = false
-			placemarker.Size = Vector3.new(0.1, 0.1, 0.1)
-			placemarker.Transparency = 1
-			makemarker(placemarker, placemarker, Color3.fromRGB(0, 0, 255), 0.15, 0)
-		end)    
-
-		local UserInputService = game:GetService'UserInputService'
-
-		UserInputService.InputBegan:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton2 then
-				enabled = true 
-				Plr = getClosestPlayerToCursor()
-				guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-			end
-		end)
-
-		UserInputService.InputEnded:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton2 then
-				enabled = false
-				guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			end
-		end)
-
-		function getClosestPlayerToCursor()
-			local closestPlayer
-			local shortestDistance = math.huge
-
-			for i, v in pairs(game.Players:GetPlayers()) do
-				if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("Head") then
-					local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
-					local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
-					if magnitude < shortestDistance then
-						closestPlayer = v
-						shortestDistance = magnitude
-					end
+			while wait() do
+				if player.Character then
+					TextLabel.Text = player.Name.." | Bounty: "..tostring(player:WaitForChild("leaderstats").Wanted.Value).." | "..tostring(math.floor(player.Character:WaitForChild("Humanoid").Health))
 				end
 			end
-			return closestPlayer
+		end)
+	end
+
+	for i = 1, #data do
+		if data[i] ~= game.Players.LocalPlayer then
+			noob(data[i])
 		end
+	end
 
-		game:GetService'RunService'.Stepped:connect(function()
-			if enabled and Plr.Character and Plr.Character:FindFirstChild("Head") then
-				placemarker.CFrame = CFrame.new(Plr.Character.Head.Position+(Plr.Character.Head.Velocity*accomidationfactor))
-			else
-				placemarker.CFrame = CFrame.new(0, 9999, 0)
-			end
-		end)
+	game.Players.PlayerAdded:connect(function(Player)
+		noob(Player)
+	end)
 
-		local mt = getrawmetatable(game)
-		local old = mt.__namecall
-		setreadonly(mt, false)
-		mt.__namecall = newcclosure(function(...)
-			local args = {...}
-			if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
-				args[3] = Plr.Character.Head.Position+(Plr.Character.Head.Velocity*accomidationfactor)
-				return old(unpack(args))
+	spawn(function()
+		placemarker.Anchored = true
+		placemarker.CanCollide = false
+		placemarker.Size = Vector3.new(0.1, 0.1, 0.1)
+		placemarker.Transparency = 1
+		makemarker(placemarker, placemarker, Color3.fromRGB(0, 0, 255), 0.15, 0)
+	end)    
+
+	local UserInputService = game:GetService'UserInputService'
+
+	UserInputService.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then
+			enabled = true 
+			Plr = getClosestPlayerToCursor()
+			guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end)
+
+	UserInputService.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then
+			enabled = false
+			guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		end
+	end)
+
+	function getClosestPlayerToCursor()
+		local closestPlayer
+		local shortestDistance = math.huge
+
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("Head") then
+				local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
 			end
-			return old(...)
-		end)
+		end
+		return closestPlayer
+	end
+
+	game:GetService'RunService'.Stepped:connect(function()
+		if enabled and Plr.Character and Plr.Character:FindFirstChild("Head") then
+			placemarker.CFrame = CFrame.new(Plr.Character.Head.Position+(Plr.Character.Head.Velocity*accomidationfactor))
+		else
+			placemarker.CFrame = CFrame.new(0, 9999, 0)
+		end
+	end)
+
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(...)
+		local args = {...}
+		if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
+			args[3] = Plr.Character.Head.Position+(Plr.Character.Head.Velocity*accomidationfactor)
+			return old(unpack(args))
+		end
+		return old(...)
+	end)
 end)
-
 
 UICorner_16.CornerRadius = UDim.new(0, 3)
 UICorner_16.Parent = Aimlock
@@ -862,11 +863,12 @@ TeleportsTabTitle.TextWrapped = true
 
 -- for tps
 
-	local Plr = game.Players.LocalPlayer
+local Plr = game.Players.LocalPlayer
 
-	function TP(cframe)
-		Plr.Character.HumanoidRootPart.CFrame = cframe
+function TP(cframe)
+	Plr.Character.HumanoidRootPart.CFrame = cframe
 end
+
 
 AdminBase.Name = "AdminBase"
 AdminBase.Parent = TeleportsScrollingFrame
@@ -880,7 +882,7 @@ AdminBase.TextColor3 = Color3.fromRGB(255, 255, 255)
 AdminBase.TextSize = 20.000
 AdminBase.TextWrapped = true
 AdminBase.MouseButton1Click:connect(function()
-		TP(CFrame.new(-729.9, -37.6, -885))
+	TP(CFrame.new(-729.9, -37.6, -885))
 end)
 
 UICorner_18.CornerRadius = UDim.new(0, 3)
@@ -898,7 +900,7 @@ Shop1.TextColor3 = Color3.fromRGB(255, 255, 255)
 Shop1.TextSize = 20.000
 Shop1.TextWrapped = true
 Shop1.MouseButton1Click:connect(function()
-		TP(CFrame.new(-582, 7.1, -739))
+	TP(CFrame.new(-582, 7.1, -739))
 end)
 
 UICorner_19.CornerRadius = UDim.new(0, 3)
@@ -916,7 +918,7 @@ Shop2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Shop2.TextSize = 20.000
 Shop2.TextWrapped = true
 Shop2.MouseButton1Click:connect(function()
-		TP(CFrame.new(481.5, 48, -621.5))
+	TP(CFrame.new(481.5, 48, -621.5))
 end)
 
 UICorner_20.CornerRadius = UDim.new(0, 3)
@@ -934,7 +936,7 @@ Taco.TextColor3 = Color3.fromRGB(255, 255, 255)
 Taco.TextSize = 20.000
 Taco.TextWrapped = true
 Taco.MouseButton1Click:connect(function()
-		TP(CFrame.new(584.5401, 51.061409, -479.443848))
+	TP(CFrame.new(584.5401, 51.061409, -479.443848))
 end)
 
 UICorner_21.CornerRadius = UDim.new(0, 3)
@@ -952,7 +954,7 @@ PlayGround.TextColor3 = Color3.fromRGB(255, 255, 255)
 PlayGround.TextSize = 20.000
 PlayGround.TextWrapped = true
 PlayGround.MouseButton1Click:connect(function()
-		TP(CFrame.new(-217.894958, 29.3668556, -742.85022))
+	TP(CFrame.new(-217.894958, 29.3668556, -742.85022))
 end)
 
 UICorner_22.CornerRadius = UDim.new(0, 3)
@@ -970,7 +972,7 @@ Bank.TextColor3 = Color3.fromRGB(255, 255, 255)
 Bank.TextSize = 20.000
 Bank.TextWrapped = true
 Bank.MouseButton1Click:connect(function()
-		TP(CFrame.new(-485.7, 23.6, -285.2))
+	TP(CFrame.new(-485.7, 23.6, -285.2))
 end)
 
 UICorner_23.CornerRadius = UDim.new(0, 3)
@@ -1020,137 +1022,137 @@ AutoFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
 AutoFarm.TextSize = 20.000
 AutoFarm.TextWrapped = true
 AutoFarm.MouseButton1Down:connect(function()
-		local plr = game.Players.LocalPlayer
+	local plr = game.Players.LocalPlayer
 
-		local ATMEnabled,HospitalEnabled,ShoeEnabled = false,false,false
+	local ATMEnabled,HospitalEnabled,ShoeEnabled = false,false,false
 
-		if messagebox("Enable ATM Farm?","Settings",4) == 6 then ATMEnabled = true end
-		if messagebox("Enable Hospital Farm?","Settings",4) == 6 then HospitalEnabled = true end
-		if messagebox("Enable Shoe Farm?","Settings",4) == 6 then ShoeEnabled = true end
+	if messagebox("Enable ATM Farm?","Settings",4) == 6 then ATMEnabled = true end
+	if messagebox("Enable Hospital Farm?","Settings",4) == 6 then HospitalEnabled = true end
+	if messagebox("Enable Shoe Farm?","Settings",4) == 6 then ShoeEnabled = true end
 
-		repeat wait() until plr.Character:FindFirstChild("FULLY_LOADED_CHAR")
+	repeat wait() until plr.Character:FindFirstChild("FULLY_LOADED_CHAR")
 
-		for i,v in pairs(game.Workspace:GetDescendants()) do
-			if v:IsA("Seat") then
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v:IsA("Seat") then
+			v:Destroy()
+		end
+	end
+
+	function DeleteAntiCheat()
+		for i,v in pairs(plr.Character:GetChildren()) do
+			if v.ClassName == "Script" and v.Name ~= "Health" then
 				v:Destroy()
 			end
 		end
+	end
 
-		function DeleteAntiCheat()
-			for i,v in pairs(plr.Character:GetChildren()) do
-				if v.ClassName == "Script" and v.Name ~= "Health" then
-					v:Destroy()
-				end
-			end
-		end
-
-		plr.CharacterAdded:Connect(function(character)
-			repeat wait() until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("FULLY_LOADED_CHAR")
-			DeleteAntiCheat()
-			wait(1)
-			reset = false
-		end)
+	plr.CharacterAdded:Connect(function(character)
+		repeat wait() until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("FULLY_LOADED_CHAR")
 		DeleteAntiCheat()
+		wait(1)
+		reset = false
+	end)
+	DeleteAntiCheat()
 
-		local reset = false
-		spawn(function()
-			while wait() do
-				pcall(function()if plr.Character.Humanoid.Health <= 0 then reset = true end end)
-			end
-		end)
-
-		game:GetService("Players").LocalPlayer.Idled:connect(function()
-			game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-			wait(1)
-			game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		end)
-
-		game:GetService('RunService').Stepped:connect(function()
-			pcall(function()plr.Character.Humanoid:ChangeState(11)end)
-			setsimulationradius(math.huge)
-		end)
-
-		local function CompleteHospitalJob(Colour,Patient)
-			repeat
-				fireclickdetector(game.Workspace.Ignored.HospitalJob[Colour].ClickDetector)
-				wait(0.1)
-				if Patient:FindFirstChild("ClickDetector") then
-					fireclickdetector(Patient.ClickDetector)
-				end
-			until Patient.Name == "Thank you!" or Patient.Name == "Wrong bottle!"
+	local reset = false
+	spawn(function()
+		while wait() do
+			pcall(function()if plr.Character.Humanoid.Health <= 0 then reset = true end end)
 		end
+	end)
 
-		local function OtherJobs()
-			if HospitalEnabled then
-				for i,v in pairs(game.Workspace.Ignored.HospitalJob:GetChildren()) do
-					if v.ClassName == "Model" then
-						plr.Character.HumanoidRootPart.CFrame = CFrame.new(113.1,22.79,-478.97)
-						if string.find(v.Name, "Red") then CompleteHospitalJob("Red",v)
-						elseif string.find(v.Name, "Blue") then CompleteHospitalJob("Blue",v)
-						elseif string.find(v.Name, "Green") then CompleteHospitalJob("Green",v) end
-					end
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+		game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		wait(1)
+		game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	end)
+
+	game:GetService('RunService').Stepped:connect(function()
+		pcall(function()plr.Character.Humanoid:ChangeState(11)end)
+		setsimulationradius(math.huge)
+	end)
+
+	local function CompleteHospitalJob(Colour,Patient)
+		repeat
+			fireclickdetector(game.Workspace.Ignored.HospitalJob[Colour].ClickDetector)
+			wait(0.1)
+			if Patient:FindFirstChild("ClickDetector") then
+				fireclickdetector(Patient.ClickDetector)
+			end
+		until Patient.Name == "Thank you!" or Patient.Name == "Wrong bottle!"
+	end
+
+	local function OtherJobs()
+		if HospitalEnabled then
+			for i,v in pairs(game.Workspace.Ignored.HospitalJob:GetChildren()) do
+				if v.ClassName == "Model" then
+					plr.Character.HumanoidRootPart.CFrame = CFrame.new(113.1,22.79,-478.97)
+					if string.find(v.Name, "Red") then CompleteHospitalJob("Red",v)
+					elseif string.find(v.Name, "Blue") then CompleteHospitalJob("Blue",v)
+					elseif string.find(v.Name, "Green") then CompleteHospitalJob("Green",v) end
 				end
 			end
-			if ShoeEnabled then
-				for i,v in pairs(game.Workspace.Ignored.Drop:GetChildren()) do
-					if v.Name == "MeshPart" then
-						v.Name = "ShoeGrabbing"
-						repeat
+		end
+		if ShoeEnabled then
+			for i,v in pairs(game.Workspace.Ignored.Drop:GetChildren()) do
+				if v.Name == "MeshPart" then
+					v.Name = "ShoeGrabbing"
+					repeat
+						wait()
+						pcall(function()
+							plr.Character.HumanoidRootPart.CFrame = v.CFrame
+							fireclickdetector(v.ClickDetector)
+						end)
+					until not game.Workspace.Ignored.Drop:FindFirstChild("ShoeGrabbing")
+				end
+			end
+			if plr.Character.BodyEffects.ShoesCollect.Value > 9 then
+				fireclickdetector(game.Workspace.Ignored["Clean the shoes on the floor and come to me for cash"].ClickDetector)
+			end
+		end
+	end
+
+	while wait(0.5) do
+		OtherJobs()
+		if ATMEnabled then
+			for i,v in pairs(game.Workspace.Cashiers:GetChildren()) do
+				if v.Humanoid.Health > 0 then
+					wait(5)
+					spawn(function()
+						while v.Humanoid.Health > 0 do
+							wait()
+							pcall(function()plr.Character.HumanoidRootPart.CFrame = v.Head.CFrame * CFrame.new(0, -2, 1.5)end)
+						end
+					end)
+					repeat
+						pcall(function()plr.Character.Humanoid:EquipTool(plr.Backpack.Combat)end)
+						wait(0.1)
+						pcall(function()
+							plr.Character.Combat:Activate()
+							wait(2)
+							plr.Character.Combat:Deactivate()
+							wait(1)
+						end)
+					until v.Humanoid.Health <= 0
+					wait(0.1)
+					for ii,vv in pairs(game.Workspace.Ignored.Drop:GetChildren()) do
+						if vv.Name ~= "MoneyDrop" then continue end
+						if (plr.Character.HumanoidRootPart.Position - vv.Position).Magnitude > 25 then continue end
+						vv.Name = "Grabbing"
+						vv.Anchored = true
+						while game.Workspace.Ignored.Drop:FindFirstChild("Grabbing") do
 							wait()
 							pcall(function()
-								plr.Character.HumanoidRootPart.CFrame = v.CFrame
-								fireclickdetector(v.ClickDetector)
+								plr.character.HumanoidRootPart.CFrame = vv.CFrame
+								if not reset then fireclickdetector(vv.ClickDetector) end
 							end)
-						until not game.Workspace.Ignored.Drop:FindFirstChild("ShoeGrabbing")
-					end
-				end
-				if plr.Character.BodyEffects.ShoesCollect.Value > 9 then
-					fireclickdetector(game.Workspace.Ignored["Clean the shoes on the floor and come to me for cash"].ClickDetector)
-				end
-			end
-		end
-
-		while wait(0.5) do
-			OtherJobs()
-			if ATMEnabled then
-				for i,v in pairs(game.Workspace.Cashiers:GetChildren()) do
-					if v.Humanoid.Health > 0 then
-						wait(5)
-						spawn(function()
-							while v.Humanoid.Health > 0 do
-								wait()
-								pcall(function()plr.Character.HumanoidRootPart.CFrame = v.Head.CFrame * CFrame.new(0, -2, 1.5)end)
-							end
-						end)
-						repeat
-							pcall(function()plr.Character.Humanoid:EquipTool(plr.Backpack.Combat)end)
-							wait(0.1)
-							pcall(function()
-								plr.Character.Combat:Activate()
-								wait(2)
-								plr.Character.Combat:Deactivate()
-								wait(1)
-							end)
-						until v.Humanoid.Health <= 0
-						wait(0.1)
-						for ii,vv in pairs(game.Workspace.Ignored.Drop:GetChildren()) do
-							if vv.Name ~= "MoneyDrop" then continue end
-							if (plr.Character.HumanoidRootPart.Position - vv.Position).Magnitude > 25 then continue end
-							vv.Name = "Grabbing"
-							vv.Anchored = true
-							while game.Workspace.Ignored.Drop:FindFirstChild("Grabbing") do
-								wait()
-								pcall(function()
-									plr.character.HumanoidRootPart.CFrame = vv.CFrame
-									if not reset then fireclickdetector(vv.ClickDetector) end
-								end)
-							end
 						end
-						OtherJobs()
 					end
+					OtherJobs()
 				end
 			end
 		end
+	end
 
 end)
 
@@ -1169,7 +1171,7 @@ P90AutoFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
 P90AutoFarm.TextSize = 20.000
 P90AutoFarm.TextWrapped = true
 P90AutoFarm.MouseButton1Down:connect(function()
-		loadstring(game:HttpGet(('https://pastebin.com/raw/E6LCcnrP'),true))()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/E6LCcnrP'),true))()
 end)
 
 UICorner_26.CornerRadius = UDim.new(0, 3)
@@ -1286,19 +1288,14 @@ OpenFrame.Parent = DaHoodFucker
 OpenFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 OpenFrame.BackgroundTransparency = 1.000
 OpenFrame.BorderSizePixel = 0
-OpenFrame.Position = UDim2.new(0.389598548, 0, 0, 0)
-OpenFrame.Size = UDim2.new(0, 330, 0, 61)
-OpenFrame.Visible = false
-OpenFrame.MouseButton1Down:connect(function()
-	DHFBack.Visible = true
-	OpenFrame.Visible = false
-end)
+OpenFrame.Position = UDim2.new(0.382299274, 0, 0, 0)
+OpenFrame.Size = UDim2.new(0, 135, 0, 34)
 
 OpenButton.Name = "OpenButton"
 OpenButton.Parent = OpenFrame
 OpenButton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 OpenButton.BorderSizePixel = 0
-OpenButton.Position = UDim2.new(0.212698758, 0, 0.16140683, 0)
+OpenButton.Position = UDim2.new(0.575661719, 0, 0.279053897, 0)
 OpenButton.Size = UDim2.new(0, 100, 0, 27)
 OpenButton.Font = Enum.Font.SourceSans
 OpenButton.Text = "Open"
