@@ -1291,7 +1291,6 @@ OpenFrame.BackgroundTransparency = 1.000
 OpenFrame.BorderSizePixel = 0
 OpenFrame.Position = UDim2.new(0.382299274, 0, 0, 0)
 OpenFrame.Size = UDim2.new(0, 135, 0, 34)
-OpenFrame.Visible = false
 
 OpenButton.Name = "OpenButton"
 OpenButton.Parent = OpenFrame
