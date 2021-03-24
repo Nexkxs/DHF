@@ -150,6 +150,13 @@ Player.Text = "Player"
 Player.TextColor3 = Color3.fromRGB(255, 255, 255)
 Player.TextSize = 20.000
 Player.TextWrapped = true
+Player.MouseButton1Down:connect(function()
+	PlayerFrame.Visible = true
+	CombatFrame.Visible = false
+	AutoFarmsFrame.Visible = false
+	TeleportsFrame.Visible = false
+	TargetFrame.Visible = false
+end)
 
 
 
@@ -165,6 +172,13 @@ Combat.Text = "Combat"
 Combat.TextColor3 = Color3.fromRGB(255, 255, 255)
 Combat.TextSize = 20.000
 Combat.TextWrapped = true
+Combat.MouseButton1Down:connect(function()
+	PlayerFrame.Visible = false
+	CombatFrame.Visible = true
+	AutoFarmsFrame.Visible = false
+	TeleportsFrame.Visible = false
+	TargetFrame.Visible = false
+end)
 
 
 AutoFarms.Name = "AutoFarms"
@@ -180,7 +194,11 @@ AutoFarms.TextColor3 = Color3.fromRGB(255, 255, 255)
 AutoFarms.TextSize = 20.000
 AutoFarms.TextWrapped = true
 AutoFarms.MouseButton1Down:connect(function()
-	AutoFarmsFrame.visible = true
+	PlayerFrame.Visible = false
+	CombatFrame.Visible = false
+	AutoFarmsFrame.Visible = true
+	TeleportsFrame.Visible = false
+	TargetFrame.Visible = fals
 end)
 
 Teleports.Name = "Teleports"
@@ -195,6 +213,13 @@ Teleports.Text = "Teleports"
 Teleports.TextColor3 = Color3.fromRGB(255, 255, 255)
 Teleports.TextSize = 20.000
 Teleports.TextWrapped = true
+Teleports.MouseButton1Down:connect(function()
+	PlayerFrame.Visible = false
+	CombatFrame.Visible = false
+	AutoFarmsFrame.Visible = false
+	TeleportsFrame.Visible = true
+	TargetFrame.Visible = false
+end)
 
 Target.Name = "Target"
 Target.Parent = DHFButtonsLeft
@@ -241,13 +266,6 @@ PlayerFrame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 PlayerFrame.Position = UDim2.new(0.238658771, 0, 0.213375792, 0)
 PlayerFrame.Size = UDim2.new(0, 378, 0, 235)
 PlayerFrame.Visible = false
-PlayerFrame.MouseButton1Down:connect(function()
-	PlayerFrame.Visible = true
-	CombatFrame.Visible = false
-	AutoFarmsFrame.Visible = false
-	TeleportsFrame.Visible = false
-	TargetFrame.Visible = false
-end)
 
 UICorner_3.CornerRadius = UDim.new(0, 6)
 UICorner_3.Parent = PlayerFrame
@@ -516,13 +534,7 @@ CombatFrame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 CombatFrame.Position = UDim2.new(0.238658771, 0, 0.213375792, 0)
 CombatFrame.Size = UDim2.new(0, 378, 0, 235)
 CombatFrame.Visible = false
-CombatFrame.MouseButton1Down:connect(function()
-	PlayerFrame.Visible = false
-	CombatFrame.Visible = true
-	AutoFarmsFrame.Visible = false
-	TeleportsFrame.Visible = false
-	TargetFrame.Visible = false
-end)
+
 
 UICorner_10.CornerRadius = UDim.new(0, 6)
 UICorner_10.Parent = CombatFrame
@@ -803,13 +815,6 @@ TeleportsFrame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 TeleportsFrame.Position = UDim2.new(0.238658771, 0, 0.213375792, 0)
 TeleportsFrame.Size = UDim2.new(0, 378, 0, 235)
 TeleportsFrame.Visible = false
-TeleportsFrame.MouseButton1Down:connect(function()
-	PlayerFrame.Visible = false
-	CombatFrame.Visible = false
-	AutoFarmsFrame.Visible = false
-	TeleportsFrame.Visible = true
-	TargetFrame.Visible = false
-end)
 
 UICorner_17.CornerRadius = UDim.new(0, 6)
 UICorner_17.Parent = TeleportsFrame
