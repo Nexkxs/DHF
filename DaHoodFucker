@@ -150,6 +150,7 @@ CloseButton.TextSize = 14.000
 CloseButton.TextWrapped = true
 CloseButton.MouseButton1Down:connect(function()
 	DHFBack.Visible = false
+	OpenFrame.Visible = true
 end)
 
 DHFButtonsLeft.Name = "DHFButtonsLeft"
@@ -1290,6 +1291,7 @@ OpenFrame.BackgroundTransparency = 1.000
 OpenFrame.BorderSizePixel = 0
 OpenFrame.Position = UDim2.new(0.382299274, 0, 0, 0)
 OpenFrame.Size = UDim2.new(0, 135, 0, 34)
+OpenFrame.Visible = false
 
 OpenButton.Name = "OpenButton"
 OpenButton.Parent = OpenFrame
@@ -1303,8 +1305,10 @@ OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OpenButton.TextScaled = true
 OpenButton.TextSize = 14.000
 OpenButton.TextWrapped = true
+OpenButton.Visible = false
 OpenButton.MouseButton1Down:connect(function()
 	DHFBack.Visible = true
+	OpenFrame.Visible = false
 end)
 
 UICorner_33.Parent = OpenButton
