@@ -1,6 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
 -- Instances:
 
 local DaHoodFucker = Instance.new("ScreenGui")
@@ -505,7 +502,7 @@ GodBlock.TextColor3 = Color3.fromRGB(255, 255, 255)
 GodBlock.TextSize = 20.000
 GodBlock.TextWrapped = true
 GodBlock.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/878gD6XV"))(true);
+	loadstring(game:HttpGet("https://pastebin.com/raw/8dYyXr7n"))()
 end)
 
 UICorner_7.CornerRadius = UDim.new(0, 3)
